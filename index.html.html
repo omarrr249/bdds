@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAAM anime | أعمال المانجا</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #ff4757;
+            --dark: #121212;
+            --darker: #0a0a0a;
+            --light: #e0e0e0;
+            --gray: #a4b0be;
+        }
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            font-family: 'Tajawal', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: var(--darker);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo img {
+            height: 40px;
+            margin-left: 10px;
+        }
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary);
+            font-family: 'Arial', sans-serif;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin-left: 25px;
+        }
+        .nav-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: #1e1e1e;
+            border-radius: 30px;
+            padding: 8px 15px;
+            width: 300px;
+        }
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: var(--light);
+            width: 100%;
+            padding: 5px 10px;
+            outline: none;
+        }
+        .search-box button {
+            background: transparent;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+        }
+        .works-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            padding: 40px;
+        }
+        .work-item {
+            display: flex;
+            background: var(--darker);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .work-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255,71,87,0.3);
+        }
+        .manga-cover {
+            width: 150px;
+            height: 220px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s;
+            border-left: 3px solid var(--primary);
+        }
+        .manga-cover:hover {
+            transform: scale(1.05);
+        }
+        .manga-info {
+            padding: 15px;
+            flex: 1;
+        }
+        .manga-info h2 {
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        .manga-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+        .meta-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .view-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: background 0.3s;
+        }
+        .view-btn:hover {
+            background: #ff6b81;
+        }
+        @media (max-width: 768px) {
+            .works-container {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            .work-item {
+                flex-direction: column;
+            }
+            .manga-cover {
+                width: 100%;
+                height: auto;
+                border-left: none;
+                border-bottom: 3px solid var(--primary);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="BAAM.jpg" alt="شعار BAAM ANIME">
+            <span class="logo-text">BAAM anime</span>
+        </a>
+        
+        <div class="search-box">
+            <input type="text" placeholder="ابحث عن أعمال، شخصيات...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="#"><i class="fas fa-fire"></i> الأعمال</a></li>
+            <li><a href="#"><i class="fas fa-users"></i> المجتمع</a></li>
+            <li><a href="#"><i class="fas fa-info-circle"></i> عنا</a></li>
+        </ul>
+    </nav>
+
+    <!-- جميع الأعمال -->
+    <div class="works-container">
+        <!-- 1. رجل المنشار -->
+        <div class="work-item">
+            <img src="images/chainsaw-man-cover.jpg" alt="رجل المنشار" class="manga-cover" onclick="window.location.href='chainsaw-selection.html'">
+            <div class="manga-info">
+                <h2>رجل المنشار</h2>
+                <p>دنغي الفتى الفقير الذي يدمج مع شيطان المنشار ليصبح صياد شياطين. قصة مليئة بالإثارة والعنف والكوميديا السوداء.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> تاتسوكي فوجيموتو</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2018</span>
+                    <span><i class="fas fa-tag"></i> أكشن، رعب</span>
+                </div>
+                <button class="view-btn" onclick="window.location.href='chainsaw-selection.html'">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 2. هجوم العمالقة -->
+        <div class="work-item">
+            <img src="images/attack-on-titan.jpg" alt="هجوم العمالقة" class="manga-cover" onclick="window.location.href='aot-selection.html'">
+            <div class="manga-info">
+                <h2>هجوم العمالقة</h2>
+                <p>إيرين ييغر وشخصيات أخرى يعيشون في عالم تهدده العمالقة. القصة مليئة بالمفاجآت والأسرار والحبكة المعقدة.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> هاجيمي إيساياما</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2009</span>
+                    <span><i class="fas fa-tag"></i> أكشن، دراما</span>
+                </div>
+                <button class="view-btn" onclick="window.location.href='aot-selection.html'">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 3. ون بيس -->
+        <div class="work-item">
+            <img src="images/one-piece.jpg" alt="ون بيس" class="manga-cover" onclick="window.location.href='op-selection.html'">
+            <div class="manga-info">
+                <h2>ون بيس</h2>
+                <p>مغامرات لوفي وطاقمه بحثاً عن الكنز الأسطوري "ون بيس". أطول مانجا شونن مستمرة منذ 1997 مليئة بالمغامرات.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> إييتشيرو أودا</span>
+                    <span><i class="fas fa-calendar-alt"></i> 1997</span>
+                    <span><i class="fas fa-tag"></i> مغامرات، كوميديا</span>
+                </div>
+                <button class="view-btn" onclick="window.location.href='op-selection.html'">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 4. ناروتو -->
+        <div class="work-item">
+            <img src="images/naruto.jpg" alt="ناروتو" class="manga-cover" onclick="window.location.href='naruto-selection.html'">
+            <div class="manga-info">
+                <h2>ناروتو</h2>
+                <p>ناروتو أوزوماكي، النينجا الصغير الذي يحلم بأن يصبح هوكاجي قريته. قصة عن الصداقة والمثابرة وتحقيق الأحلام.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> ماساشي كيشيموتو</span>
+                    <span><i class="fas fa-calendar-alt"></i> 1999</span>
+                    <span><i class="fas fa-tag"></i> أكشن، فنون قتالية</span>
+                </div>
+                <button class="view-btn" onclick="window.location.href='naruto-selection.html'">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 5. بليتش -->
+        <div class="work-item">
+            <img src="images/bleach.jpg" alt="بليتش" class="manga-cover" onclick="window.location.href='bleach-selection.html'">
+            <div class="manga-info">
+                <h2>بليتش</h2>
+                <p>إيتشيغو كوروساكي يكتسب قوات شينيغامي ويبدأ في حماية البشر من الأرواح الشريرة. قتال روحي بأسلوب ساموراي فريد.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> تايت كوبو</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2001</span>
+                    <span><i class="fas fa-tag"></i> أكشن، خارق للطبيعة</span>
+                </div>
+                <button class="view-btn" onclick="window.location.href='bleach-selection.html'">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 6. دراغون بول -->
+        <div class="work-item">
+            <img src="images/dragon-ball.jpg" alt="دراغون بول" class="manga-cover" onclick="window.location.href='db-selection.html'">
+            <div class="manga-info">
+                <h2>دراغون بول</h2>
+                <p>مغامرات سون غوكو منذ طفولته حتى أصبح أقوى مقاتل في الكون. سلسلة أسطورية غيرت مفهوم أنيمي القتال.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> أكيرا تورياما</span>
+                    <span><i class="fas fa-calendar-alt"></i> 1984</span>
+                    <span><i class="fas fa-tag"></i> أكشن، فنون قتالية</span>
+                </div>
+                <button class="view-btn" onclick="window.location.href='db-selection.html'">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 7. دياثيلون -->
+        <div class="work-item">
+            <img src="images/inazuma.jpg" alt="دياثيلون" class="manga-cover" onclick="window.location.href='inazuma-selection.html'">
+            <div class="manga-info">
+                <h2>دياثيلون</h2>
+                <p>فريق كرة قدم المدرسة الثانوية وصراعهم للوصول للقمة. قصة رياضية مليئة بالتحديات والعواطف.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> يوسوكي ماتسوي</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2008</span>
+                    <span><i class="fas fa-tag"></i> رياضة، مدرسي</span>
+                </div>
+                <button class="view-btn" onclick="window.location.href='inazuma-selection.html'">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 8. هونتر x هونتر -->
+        <div class="work-item">
+            <img src="images/hunterxhunter.jpg" alt="هونتر x هونتر" class="manga-cover" onclick="window.location.href='hxh-selection.html'">
+            <div class="manga-info">
+                <h2>هونتر x هونتر</h2>
+                <p>غون فريكس يصبح صياداً ليجد والده. عالم غني بالأنظمة القتالية المعقدة والشخصيات العميقة.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> يوشيهيرو توغاشي</span>
+                    <span><i class="fas fa-calendar-alt"></i> 1998</span>
+                    <span><i class="fas fa-tag"></i> مغامرات، أكشن</span>
+                </div>
+                <button class="view-btn" onclick="window.location.href='hxh-selection.html'">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 9. ديمون سلاير -->
+        <div class="work-item">
+            <img src="images/demon-slayer.jpg" alt="ديمون سلاير" class="manga-cover" onclick="window.location.href='ds-selection.html'">
+            <div class="manga-info">
+                <h2>ديمون سلاير</h2>
+                <p>تانجيرو كامادو في رحلته لإنقاذ أخته من لعنة الشيطان. قصة مؤثرة عن الروابط العائلية.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> كويوهارو غوتوجي</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2016</span>
+                    <span><i class="fas fa-tag"></i> أكشن، خارق للطبيعة</span>
+                </div>
+                <button class="view-btn" onclick="window.location.href='ds-selection.html'">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 10. ماي هيرو أكاديميا -->
+        <div class="work-item">
+            <img src="images/mha.jpg" alt="ماي هيرو أكاديميا" class="manga-cover" onclick="window.location.href='mha-selection.html'">
+            <div class="manga-info">
+                <h2>ماي هيرو أكاديميا</h2>
+                <p>إيزوكو ميدوريا، الفتى الذي يولد بدون قدرة في عالم مليء بالأبطال الخارقين. قصة إلهامية عن عدم الاستسلام.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> كوهي هوريكوشي</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2014</span>
+                    <span><i class="fas fa-tag"></i> أبطال خارقين، مدرسي</span>
+                </div>
+                <button class="view-btn" onclick="window.location.href='mha-selection.html'">عرض العمل</button>
+            </div>
+        </div>
+    </div>
+
+   <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAAM | أعمال المانجا</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #ff4757;
+            --dark: #121212;
+            --darker: #0a0a0a;
+            --light: #e0e0e0;
+            --gray: #a4b0be;
+        }
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            font-family: 'Tajawal', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: var(--darker);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo img {
+            height: 40px;
+            margin-left: 10px;
+        }
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary);
+            font-family: 'Arial', sans-serif;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin-left: 25px;
+        }
+        .nav-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: #1e1e1e;
+            border-radius: 30px;
+            padding: 8px 15px;
+            width: 300px;
+        }
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: var(--light);
+            width: 100%;
+            padding: 5px 10px;
+            outline: none;
+        }
+        .search-box button {
+            background: transparent;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+        }
+        .works-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            padding: 40px;
+        }
+        .work-item {
+            display: flex;
+            background: var(--darker);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .work-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255,71,87,0.3);
+        }
+        .manga-cover {
+            width: 150px;
+            height: 220px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s;
+            border-left: 3px solid var(--primary);
+        }
+        .manga-cover:hover {
+            transform: scale(1.05);
+        }
+        .manga-info {
+            padding: 15px;
+            flex: 1;
+        }
+        .manga-info h2 {
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        .manga-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+        .meta-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .view-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: background 0.3s;
+        }
+        .view-btn:hover {
+            background: #ff6b81;
+        }
+        @media (max-width: 768px) {
+            .works-container {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            .work-item {
+                flex-direction: column;
+            }
+            .manga-cover {
+                width: 100%;
+                height: auto;
+                border-left: none;
+                border-bottom: 3px solid var(--primary);
+            }
+        }
+    </style>
+
+   <!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAAM | أعمال المانجا</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #ff4757;
+            --dark: #121212;
+            --darker: #0a0a0a;
+            --light: #e0e0e0;
+            --gray: #a4b0be;
+        }
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            font-family: 'Tajawal', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: var(--darker);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .logo img {
+            height: 40px;
+            margin-left: 10px;
+        }
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary);
+            font-family: 'Arial', sans-serif;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin-left: 25px;
+        }
+        .nav-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: #1e1e1e;
+            border-radius: 30px;
+            padding: 8px 15px;
+            width: 300px;
+        }
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: var(--light);
+            width: 100%;
+            padding: 5px 10px;
+            outline: none;
+        }
+        .search-box button {
+            background: transparent;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+        }
+        .works-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+            padding: 40px;
+        }
+        .work-item {
+            display: flex;
+            background: var(--darker);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .work-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255,71,87,0.3);
+        }
+        .manga-cover {
+            width: 150px;
+            height: 220px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s;
+            border-left: 3px solid var(--primary);
+        }
+        .manga-cover:hover {
+            transform: scale(1.05);
+        }
+        .manga-info {
+            padding: 15px;
+            flex: 1;
+        }
+        .manga-info h2 {
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        .manga-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        .meta-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+        .meta-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .view-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: background 0.3s;
+        }
+        .view-btn:hover {
+            background: #ff6b81;
+        }
+        @media (max-width: 768px) {
+            .works-container {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            .work-item {
+                flex-direction: column;
+            }
+            .manga-cover {
+                width: 100%;
+                height: auto;
+                border-left: none;
+                border-bottom: 3px solid var(--primary);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            
+        </a>
+    </nav>
+
+    <!-- جميع الأعمال -->
+    <div class="works-container">
+       
+        <!-- 2. Fullmetal Alchemist: Brotherhood -->
+        <div class="work-item">
+            <img src="fma.jpg" alt="Fullmetal Alchemist: Brotherhood" class="manga-cover">
+            <div class="manga-info">
+                <h2>Fullmetal Alchemist: Brotherhood</h2>
+                <p>إدوارد وألفونس إلريك يسعيان لاستعادة أجسادهما بعد فشل تجربة الخيمياء المحرمة. قصة عن الأخوة والثمن الباهظ.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> هيرومو أراكاوا</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2001</span>
+                    <span><i class="fas fa-tag"></i> فانتازيا، أكشن</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+       
+
+        <!-- 7. Jujutsu Kaisen -->
+        <div class="work-item">
+            <img src="jujutsu.jpg" alt="Jujutsu Kaisen" class="manga-cover">
+            <div class="manga-info">
+                <h2>Jujutsu Kaisen</h2>
+                <p>يوجي إيتادوري ينضم إلى مدرسة جوجوتسو لمحاربة اللعنات بعد ابتلاعه لأحد أصابع سوكونا. قتال بأنظمة قوى فريدة.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> غيه أكوتامي</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2018</span>
+                    <span><i class="fas fa-tag"></i> أكشن، خارق للطبيعة</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+       
+
+        <!-- 9. Vinland Saga -->
+        <div class="work-item">
+            <img src="vinland.jpg" alt="Vinland Saga" class="manga-cover">
+            <div class="manga-info">
+                <h2>Vinland Saga</h2>
+                <p>ثورفين، الفايكنج الشاب الذي يسعى للانتقام ثم يبحث عن أرض خالية من العنف. قصة نضج في عالم الفايكنج.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> ماكوتو يوكيمورا</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2005</span>
+                    <span><i class="fas fa-tag"></i> تاريخي، دراما</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+
+        <!-- 12. Death Note -->
+        <div class="work-item">
+            <img src="death-note.jpg" alt="Death Note" class="manga-cover">
+            <div class="manga-info">
+                <h2>Death Note</h2>
+                <p>لايت ياغامي يجد دفتر الموت ويبدأ في محاربة الجريمة بطريقته الخاصة. معركة ذكاء بينه وبين المحقق L.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> تسوغومي أوبا</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2003</span>
+                    <span><i class="fas fa-tag"></i> غموض، إثارة نفسية</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 13. Paranoia Agent -->
+        <div class="work-item">
+            <img src="paranoia.jpg" alt="Paranoia Agent" class="manga-cover">
+            <div class="manga-info">
+                <h2>Paranoia Agent</h2>
+                <p>سلسلة جرائم غامضة تتعلق بصبي متزلج. قصة نفسية عميقة تبحث في الضغوط المجتمعية والهروب من الواقع.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> ساتوشي كون</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2004</span>
+                    <span><i class="fas fa-tag"></i> نفسي، غموض</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 14. Monster -->
+        <div class="work-item">
+            <img src="monster.jpg" alt="Monster" class="manga-cover">
+            <div class="manga-info">
+                <h2>Monster</h2>
+                <p>الطبيب تينما يبحث عن المريض السابق الذي أصبح قاتلاً متسلسلاً. قصة مطاردة عبر أوروبا.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> ناوكي أوراساوا</span>
+                    <span><i class="fas fa-calendar-alt"></i> 1994</span>
+                    <span><i class="fas fa-tag"></i> إثارة نفسية، غموض</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 15. Erased -->
+        <div class="work-item">
+            <img src="erased.jpg" alt="Erased" class="manga-cover">
+            <div class="manga-info">
+                <h2>Erased</h2>
+                <p>ساتورو يعود بالزمن إلى طفولته لمنع سلسلة جرائم قتل. قصة مؤثرة عن القدر والفرص الثانية.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> كي سانبي</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2012</span>
+                    <span><i class="fas fa-tag"></i> غموض، دراما</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 16. Psycho-Pass -->
+        <div class="work-item">
+            <img src="psycho-pass.jpg" alt="Psycho-Pass" class="manga-cover">
+            <div class="manga-info">
+                <h2>Psycho-Pass</h2>
+                <p>في مستقبل حيث تقاس نوايا الناس، مفتشو الشرطة يحققون في جرائم باستخدام نظام سايبوغ.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> غين أوروبوتشي</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2012</span>
+                    <span><i class="fas fa-tag"></i> خيال علمي، جريمة</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 17. Steins;Gate -->
+        <div class="work-item">
+            <img src="steins.jpg" alt="Steins;Gate" class="manga-cover">
+            <div class="manga-info">
+                <h2>Steins;Gate</h2>
+                <p>أوكابي رينتارو يكتشف طريقة للسفر عبر الزمن، مما يؤدي إلى سلسلة من العواقب الكارثية.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> نيتريكو</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2009</span>
+                    <span><i class="fas fa-tag"></i> خيال علمي، دراما</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 18. Tokyo Ghoul -->
+        <div class="work-item">
+            <img src="tokyo-ghoul.jpg" alt="Tokyo Ghoul" class="manga-cover">
+            <div class="manga-info">
+                <h2>Tokyo Ghoul</h2>
+                <p>كن كانيكي يصبح نصف غول بعد حادث ويحاول الحفاظ على إنسانيته. قصة صراع بين عالمين.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> سوي إيشيدا</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2011</span>
+                    <span><i class="fas fa-tag"></i> رعب نفسي، أكشن</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 19. Mirai Nikki -->
+        <div class="work-item">
+            <img src="mirai-nikki.jpg" alt="Mirai Nikki" class="manga-cover">
+            <div class="manga-info">
+                <h2>Mirai Nikki</h2>
+                <p>يوكي يشارك في لعبة قاتلة مع حاملي يوميات المستقبل، بمساعدة يومية غامضة تتنبأ بالمستقبل.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> ساكا إسيمي</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2006</span>
+                    <span><i class="fas fa-tag"></i> إثارة، نفسي</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 20. The Promised Neverland -->
+        <div class="work-item">
+            <img src="neverland.jpg" alt="The Promised Neverland" class="manga-cover">
+            <div class="manga-info">
+                <h2>The Promised Neverland</h2>
+                <p>أطفال في دار أيتام يكتشفون حقيقة مروعة عن مصيرهم ويحاولون الهروب. قصة ذكاء وتخطيط.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> كايوشيرا</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2016</span>
+                    <span><i class="fas fa-tag"></i> إثارة، فانتازيا مظلمة</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 21. Kaiji -->
+        <div class="work-item">
+            <img src="kaiji.jpg" alt="Kaiji" class="manga-cover">
+            <div class="manga-info">
+                <h2>Kaiji</h2>
+                <p>كايجي يشارك في سلسلة من ألعاب القمار الخطيرة لسداد ديونه. قصة عن البقاء والخداع.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> نوبويوكي فوكوموتو</span>
+                    <span><i class="fas fa-calendar-alt"></i> 1996</span>
+                    <span><i class="fas fa-tag"></i> إثارة نفسية، دراما</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 22. Made in Abyss -->
+        <div class="work-item">
+            <img src="abyss.jpg" alt="Made in Abyss" class="manga-cover">
+            <div class="manga-info">
+                <h2>Made in Abyss</h2>
+                <p>ريكو وريج تنزلان إلى أعماق الهاوية الغامضة بحثاً عن أم ريكو. عالم غريب وخطر.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> أكيهيتو تسوكوشي</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2012</span>
+                    <span><i class="fas fa-tag"></i> مغامرات، فانتازيا مظلمة</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 23. No Game No Life -->
+        <div class="work-item">
+            <img src="no-game.jpg" alt="No Game No Life" class="manga-cover">
+            <div class="manga-info">
+                <h2>No Game No Life</h2>
+                <p>أخ وأخت محترفان في الألعاب ينقلان إلى عالم حيث كل النزاعات تحل بالألعاب.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> يوكاميرا</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2012</span>
+                    <span><i class="fas fa-tag"></i> فانتازيا، كوميديا</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 24. Re:Zero -->
+        <div class="work-item">
+            <img src="rezero.jpg" alt="Re:Zero" class="manga-cover">
+            <div class="manga-info">
+                <h2>Re:Zero</h2>
+                <p>سوبارو ينقل إلى عالم فانتازيا مع قدرة العودة بالزمن عند الموت. قصة معاناة وتطور شخصي.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> تاباتشي ناغاتسوكي</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2014</span>
+                    <span><i class="fas fa-tag"></i> فانتازيا، دراما</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 25. Magi -->
+        <div class="work-item">
+            <img src="magi.jpg" alt="Magi" class="manga-cover">
+            <div class="manga-info">
+                <h2>Magi</h2>
+                <p>علاء الدين، علي بابا ومورغيانا في مغامراتهم عبر دنغونات سحرية وممالك مختلفة.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> شينوبو أوتاكا</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2009</span>
+                    <span><i class="fas fa-tag"></i> فانتازيا، مغامرات</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 26. Fate/Zero -->
+        <div class="work-item">
+            <img src="fate-zero.jpg" alt="Fate/Zero" class="manga-cover">
+            <div class="manga-info">
+                <h2>Fate/Zero</h2>
+                <p>حرب الكأس المقدسة الرابعة حيث يتقاتل 7 سحرة مع أبطال تاريخيين من أجل تحقيق أمنية.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> غين أوروبوتشي</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2006</span>
+                    <span><i class="fas fa-tag"></i> أكشن، فانتازيا</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 27. That Time I Got Reincarnated as a Slime -->
+        <div class="work-item">
+            <img src="slime.jpg" alt="That Time I Got Reincarnated as a Slime" class="manga-cover">
+            <div class="manga-info">
+                <h2>Reincarnated as a Slime</h2>
+                <p>ساتورو يعاد تجسيده كوحل في عالم فانتازيا ويبدأ في بناء مملكة للوحوش. قصة تطور قوة غير متوقعة.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> فوز</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2013</span>
+                    <span><i class="fas fa-tag"></i> فانتازيا، مغامرات</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 28. Overlord -->
+        <div class="work-item">
+            <img src="overlord.jpg" alt="Overlord" class="manga-cover">
+            <div class="manga-info">
+                <h2>Overlord</h2>
+                <p>لاعب يجد نفسه عالقاً في لعبة كشخصية شريرة ويبدأ في استكشاف العالم الجديد بكل قوته.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> كوغانه ماروياما</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2012</span>
+                    <span><i class="fas fa-tag"></i> فانتازيا، أكشن</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 29. Tower of God -->
+        <div class="work-item">
+            <img src="tower.jpg" alt="Tower of God" class="manga-cover">
+            <div class="manga-info">
+                <h2>Tower of God</h2>
+                <p>بام يدخل البرج الأسطوري بحثاً عن صديقته راشيل. عالم معقد مليء بالتحديات والاختبارات.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> سي يو لي</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2010</span>
+                    <span><i class="fas fa-tag"></i> فانتازيا، أكشن</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 30. The Rising of the Shield Hero -->
+        <div class="work-item">
+            <img src="shield.jpg" alt="The Rising of the Shield Hero" class="manga-cover">
+            <div class="manga-info">
+                <h2>Shield Hero</h2>
+                <p>ناوفومي، بطل الدرع، يتعرض للخيانة ويبدأ رحلته للانتقام وإثبات قوته في عالم جديد.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> أني يوساغي</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2013</span>
+                    <span><i class="fas fa-tag"></i> فانتازيا، أكشن</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 31. Sword Art Online -->
+        <div class="work-item">
+            <img src="sao.jpg" alt="Sword Art Online" class="manga-cover">
+            <div class="manga-info">
+                <h2>Sword Art Online</h2>
+                <p>كيراتو وعشيرته عالقون في لعبة واقع افتراضي حيث الموت في اللعبة يعني الموت في الواقع.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> ريكي كاواهارا</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2009</span>
+                    <span><i class="fas fa-tag"></i> خيال علمي، رومانسي</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 32. K-On! -->
+        <div class="work-item">
+            <img src="k-on.jpg" alt="K-On!" class="manga-cover">
+            <div class="manga-info">
+                <h2>K-On!</h2>
+                <p>نادي الموسيقى الخفيفة في المدرسة الثانوية وحياتهم اليومية المليئة بالموسيقى والصداقة.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> كاكيفلي</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2007</span>
+                    <span><i class="fas fa-tag"></i> موسيقى، كوميديا</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 33. Nichijou -->
+        <div class="work-item">
+            <img src="nichijou.jpg" alt="Nichijou" class="manga-cover">
+            <div class="manga-info">
+                <h2>Nichijou</h2>
+                <p>حياة يومية غير عادية لطلاب المدرسة الثانوية. كوميديا سريعة ومضحكة بلا توقف.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> كي إيغاراشي</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2006</span>
+                    <span><i class="fas fa-tag"></i> كوميديا، شريحة من الحياة</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 34. Gintama -->
+        <div class="work-item">
+            <img src="gintama.jpg" alt="Gintama" class="manga-cover">
+            <div class="manga-info">
+                <h2>Gintama</h2>
+                <p>غينتوكي ساكاتا وعصابته يقومون بأعمال غريبة في اليابان التي احتلها الفضائيون. كوميديا لا تتوقف.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> هيدياكي سوراتشي</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2003</span>
+                    <span><i class="fas fa-tag"></i> كوميديا، أكشن</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 35. Great Teacher Onizuka -->
+        <div class="work-item">
+            <img src="gto.jpg" alt="Great Teacher Onizuka" class="manga-cover">
+            <div class="manga-info">
+                <h2>Great Teacher Onizuka</h2>
+                <p>أونيزوكا، العضو السابق في عصابة الدراجات النارية، يصبح مدرساً ويغير حياة طلابه بطرق غير تقليدية.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> تورو فوجيساوا</span>
+                    <span><i class="fas fa-calendar-alt"></i> 1997</span>
+                    <span><i class="fas fa-tag"></i> كوميديا، دراما</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 36. Barakamon -->
+        <div class="work-item">
+            <img src="barakamon.jpg" alt="Barakamon" class="manga-cover">
+            <div class="manga-info">
+                <h2>Barakamon</h2>
+                <p>سيشو، الخطاط المحترف، ينتقل إلى جزيرة نائية بعد فشله ويجد الإلهام في سكانها البسطاء.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> ساتسكي يوشينو</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2009</span>
+                    <span><i class="fas fa-tag"></i> كوميديا، شريحة من الحياة</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 37. Kaguya-sama: Love is War -->
+        <div class="work-item">
+            <img src="kaguya.jpg" alt="Kaguya-sama: Love is War" class="manga-cover">
+            <div class="manga-info">
+                <h2>Kaguya-sama: Love is War</h2>
+                <p>كاغويا وشيروغاني، العبقريان الفخوران، يتنافسان في حرب ذكاء لجعل الآخر يعترف بمشاعره أولاً.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> أكا أكاساكا</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2015</span>
+                    <span><i class="fas fa-tag"></i> كوميديا، رومانسي</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 38. Saiki Kusuo no Psi-nan -->
+        <div class="work-item">
+            <img src="saiki.jpg" alt="Saiki Kusuo no Psi-nan" class="manga-cover">
+            <div class="manga-info">
+                <h2>Saiki Kusuo no Psi-nan</h2>
+                <p>سايكي كوسوو، الفتى ذو القوى الخارقة، يحاول أن يعيش حياة طبيعية رغم كل المضايقات من حوله.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> شويتشي أسو</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2012</span>
+                    <span><i class="fas fa-tag"></i> كوميديا، خارق للطبيعة</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 39. Spy x Family -->
+        <div class="work-item">
+            <img src="spy-family.jpg" alt="Spy x Family" class="manga-cover">
+            <div class="manga-info">
+                <h2>Spy x Family</h2>
+                <p>عائلة غير عادية تتكون من جاسوس، قاتلة محترفة، وطفلة قارئة أفكار. كوميديا قلبية مع جرعة من الإثارة.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> تاتسويا إيندو</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2019</span>
+                    <span><i class="fas fa-tag"></i> كوميديا، إثارة</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 40. My Dress-Up Darling -->
+        <div class="work-item">
+            <img src="dress-up.jpg" alt="My Dress-Up Darling" class="manga-cover">
+            <div class="manga-info">
+                <h2>My Dress-Up Darling</h2>
+                <p>واكانا يصنع أزياء الكوسبلاي لمارين، الفتاة الجميلة التي تحب الألعاب والأنمي. قصة رومانسية لطيفة.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> شينيتشي فوكودا</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2018</span>
+                    <span><i class="fas fa-tag"></i> رومانسي، كوميديا</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 41. Toradora! -->
+        <div class="work-item">
+            <img src="toradora.jpg" alt="Toradora!" class="manga-cover">
+            <div class="manga-info">
+                <h2>Toradora!</h2>
+                <p>تايجا الصغيرة الغاضبة ورايوجي الهادئ يتعاونان لمساعدة بعضهما في الحب. كوميديا رومانسية مؤثرة.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> يويوكو تاكيمييا</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2006</span>
+                    <span><i class="fas fa-tag"></i> رومانسي، كوميديا</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 42. Haikyuu!! -->
+        <div class="work-item">
+            <img src="haikyuu.jpg" alt="Haikyuu!!" class="manga-cover">
+            <div class="manga-info">
+                <h2>Haikyuu!!</h2>
+                <p>هيناتا وشويو، اللاعبان القصيران، يتنافسان ويطوران مهاراتهما في كرة الطائرة. قصة رياضية ملهمة.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> هاروتشي فوروداتي</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2012</span>
+                    <span><i class="fas fa-tag"></i> رياضة، مدرسي</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 43. Blue Lock -->
+        <div class="work-item">
+            <img src="blue-lock.jpg" alt="Blue Lock" class="manga-cover">
+            <div class="manga-info">
+                <h2>Blue Lock</h2>
+                <p>برنامج تدريب صارم يهدف لخلق أفضل مهاجم في العالم. قصة كرة قدم مكثفة وذات ضغط عالٍ.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> مونيي كايسي</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2018</span>
+                    <span><i class="fas fa-tag"></i> رياضة، أكشن</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 44. Slam Dunk -->
+        <div class="work-item">
+            <img src="slam-dunk.jpg" alt="Slam Dunk" class="manga-cover">
+            <div class="manga-info">
+                <h2>Slam Dunk</h2>
+                <p>ساكوراغي، المتنمر السابق، ينضم لفريق كرة السلة المدرسي ويطور مهاراته. كلاسيكية رياضية مميزة.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> تاكيهيكو إينوي</span>
+                    <span><i class="fas fa-calendar-alt"></i> 1990</span>
+                    <span><i class="fas fa-tag"></i> رياضة، كوميديا</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 45. Yuri!!! on Ice -->
+        <div class="work-item">
+            <img src="yuri.jpg" alt="Yuri!!! on Ice" class="manga-cover">
+            <div class="manga-info">
+                <h2>Yuri!!! on Ice</h2>
+                <p>يوري كاتسوكي يعود إلى التزلج بمساعدة بطل التزلج فيكتور نيكيفوروف. قصة رياضية عن الشغف والعلاقات.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> ميتسورو كوبو</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2016</span>
+                    <span><i class="fas fa-tag"></i> رياضة، دراما</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 46. Hajime no Ippo -->
+        <div class="work-item">
+            <img src="ippo.jpg" alt="Hajime no Ippo" class="manga-cover">
+            <div class="manga-info">
+                <h2>Hajime no Ippo</h2>
+                <p>إيبو، الفتى الخجول، يصبح ملاكماً محترفاً تحت إشراف المدرب كاموغاوا. قصة تحدي وتطور.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> جوجي موريكاوا</span>
+                    <span><i class="fas fa-calendar-alt"></i> 1989</span>
+                    <span><i class="fas fa-tag"></i> رياضة، أكشن</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 47. Kuroko no Basket -->
+        <div class="work-item">
+            <img src="kuroko.jpg" alt="Kuroko no Basket" class="manga-cover">
+            <div class="manga-info">
+                <h2>Kuroko no Basket</h2>
+                <p>فريق كرة السلة المدرسي مع كوروكو، اللاعب الشبح، يتحدى أبطال الجيل المعجزة.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> تاداتوشي فوجيماكي</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2008</span>
+                    <span><i class="fas fa-tag"></i> رياضة، أكشن</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 48. Run with the Wind -->
+        <div class="work-item">
+            <img src="run.jpg" alt="Run with the Wind" class="manga-cover">
+            <div class="manga-info">
+                <h2>Run with the Wind</h2>
+                <p>فريق متنوع من العدائين يتدربون لسباق الماراثون. قصة إنسانية عن التحدي والعمل الجماعي.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> شيون ميزونو</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2006</span>
+                    <span><i class="fas fa-tag"></i> رياضة، دراما</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 49. Ao Ashi -->
+        <div class="work-item">
+            <img src="ao-ashi.jpg" alt="Ao Ashi" class="manga-cover">
+            <div class="manga-info">
+                <h2>Ao Ashi</h2>
+                <p>أشيتو، موهبة كرة القدم المحلية، ينضم لأكاديمية كرة قدم محترفة ويبدأ رحلته نحو الاحتراف.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> يوجي كوبوناشي</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2015</span>
+                    <span><i class="fas fa-tag"></i> رياضة، دراما</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+
+        <!-- 50. Major -->
+        <div class="work-item">
+            <img src="major.jpg" alt="Major" class="manga-cover">
+            <div class="manga-info">
+                <h2>Major</h2>
+                <p>غورو، ابن لاعب بيسبول محترف، يسعى لتحقيق حلمه بأن يصبح لاعباً كبيراً في الدوري الأمريكي.</p>
+                <div class="meta-info">
+                    <span><i class="fas fa-user-edit"></i> تاكويا ميتسودا</span>
+                    <span><i class="fas fa-calendar-alt"></i> 1994</span>
+                    <span><i class="fas fa-tag"></i> رياضة، دراما</span>
+                </div>
+                <button class="view-btn">عرض العمل</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // يمكنك إضافة تفاعلات جافاسكريبت هنا
+        document.querySelectorAll('.manga-cover, .view-btn').forEach(item => {
+            item.addEventListener('click', function() {
+                // يمكنك إضافة تأثيرات قبل الانتقال للصفحة
+        
+            });
+        });
+    </script>
+</body>
+</html>

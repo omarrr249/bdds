@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ون بيس | ONE PIECE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --op-red: #d42026;
+            --op-blue: #1e90ff;
+            --op-yellow: #ffcc00;
+            --dark: #121212;
+            --darker: #0a0a0a;
+            --light: #e0e0e0;
+            --gray: #a4b0be;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* تبويبات الصفحة */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--op-red);
+        }
+        
+        .tab-btn {
+            padding: 12px 25px;
+            background: none;
+            border: none;
+            color: var(--gray);
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab-btn:hover {
+            color: var(--light);
+        }
+        
+        .tab-btn.active {
+            color: var(--op-red);
+            border-bottom: 3px solid var(--op-red);
+            font-weight: bold;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background: var(--darker);
+            border-radius: 5px;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* قسم القصة */
+        .story-section h2 {
+            color: var(--op-red);
+            border-right: 3px solid var(--op-red);
+            padding-right: 15px;
+        }
+        
+        /* قسم الشخصيات */
+        .characters-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .character-card {
+            background: #1e1e1e;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+        }
+        
+        .character-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(212, 32, 38, 0.2);
+        }
+        
+        .character-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 3px solid var(--op-red);
+        }
+        
+        .character-info {
+            padding: 20px;
+        }
+        
+        .character-name {
+            color: var(--op-red);
+            font-size: 1.4rem;
+            margin: 0 0 10px 0;
+        }
+        
+        .character-role {
+            display: inline-block;
+            background: var(--op-red);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .character-details {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        .detail-row {
+            margin-bottom: 8px;
+        }
+        
+        .detail-label {
+            color: var(--op-red);
+            font-weight: bold;
+        }
+        
+        /* قسم الأركات */
+        .arcs-container {
+            margin-top: 30px;
+        }
+        
+        .arc-card {
+            background: #1e1e1e;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            border-right: 4px solid var(--op-red);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .arc-title {
+            color: var(--op-red);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .arc-chapters {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        /* قسم المشاهدة */
+        .watch-options {
+            margin-top: 30px;
+        }
+        
+        .platform {
+            background: #1e1e1e;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-left: 3px solid var(--op-red);
+        }
+        
+        .platform-icon {
+            font-size: 2rem;
+            color: var(--op-red);
+        }
+        
+        .platform-info {
+            flex: 1;
+        }
+        
+        .platform-name {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .watch-btn {
+            background: var(--op-red);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .watch-btn:hover {
+            background: #b31a1f;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(212, 32, 38, 0.3);
+        }
+        
+        /* قسم الأحداث الخاصة */
+        .events-container {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .event-card {
+            background: #1e1e1e;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-top: 3px solid var(--op-yellow);
+        }
+        
+        .event-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .event-info {
+            padding: 15px;
+        }
+        
+        .event-title {
+            color: var(--op-yellow);
+            margin: 0 0 10px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .characters-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .platform {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .events-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- تبويبات الصفحة -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab('story')">القصة</button>
+            <button class="tab-btn" onclick="openTab('characters')">الشخصيات</button>
+            <button class="tab-btn" onclick="openTab('arcs')">الأركات</button>
+            <button class="tab-btn" onclick="openTab('watch')">المشاهدة</button>
+            <button class="tab-btn" onclick="openTab('events')">أحداث خاصة</button>
+        </div>
+        
+        <!-- قسم القصة -->
+        <div id="story" class="tab-content" style="display: block;">
+            <div class="story-section">
+                <h2>القصة الكاملة لوون بيس</h2>
+                <p>تدور أحداث ون بيس حول مونكي دي لوفي، شاب يحلم بأن يصبح ملك القراصنة بعد أن ألهمه قرصان القبعة الحمراء شانكس. بعد تناول لوفي لفاكهة الشيطان (غومو غومو نو مي)، يصبح جسمه مطاطياً لكنه يفقد القدرة على السباحة.</p>
+                
+                <p>يبدأ لوفي رحلته بتشكيل طاقمه الخاص "قراصنة قبعة القش" بحثاً عن الكنز الأسطوري "ون بيس" الذي خلفه ملك القراصنة السابق غول دي روجر قبل إعدامه. خلال الرحلة، يواجه لوفي وأصدقاؤه العديد من الأعداء الأقوياء ويتعرفون على أسرار العالم.</p>
+                
+                <h3>المواضيع الرئيسية</h3>
+                <p>تتناول القصة مواضيع عميقة مثل:</p>
+                <ul>
+                    <li>الحرية والسعي وراء الأحلام</li>
+                    <li>الصداقة والولاء</li>
+                    <li>الظلم والفساد في العالم</li>
+                    <li>التراث التاريخي والفجوة بين الماضي والحاضر</li>
+                    <li>معنى أن تكون عائلة</li>
+                </ul>
+                
+                <h3>العالم في ون بيس</h3>
+                <p>عالم ون بيس يتكون من:</p>
+                <ul>
+                    <li><strong>البحر الأزرق الكبير:</strong> مقسم إلى أربعة أجزاء (شمال، جنوب، شرق، غرب)</li>
+                    <li><strong>جراند لاين:</strong> بحر خطير حيث توجد معظم الأحداث</li>
+                    <li><strong>ريد لاين:</strong> سلسلة جبال ضخمة تقسم العالم</li>
+                    <li><strong>ماريجوا:</strong> مقر حكومة العالم</li>
+                    <li><strong>إمبل داون:</strong> أخطر سجن في العالم</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- قسم الشخصيات -->
+        <div id="characters" class="tab-content">
+            <h2>الشخصيات الرئيسية</h2>
+            <p>تعرف على أبرز شخصيات أنمي ون بيس</p>
+            
+            <div class="characters-container">
+                <!-- شخصية 1 -->
+                <div class="character-card">
+                    <img src="luffy.jpg" alt="لوفي" class="character-image">
+                    <div class="character-info">
+                        <h3 class="character-name">مونكي دي لوفي</h3>
+                        <span class="character-role">قائد الطاقم</span>
+                        <div class="character-details">
+                            <div class="detail-row"><span class="detail-label">القدرة:</span> فاكهة غومو غومو نو مي</div>
+                            <div class="detail-row"><span class="detail-label">الانتماء:</span> قراصنة قبعة القش</div>
+                            <div class="detail-row"><span class="detail-label">السمات:</span> مرح، شجاع، غبي أحياناً</div>
+                            <p>بطل القصة الرئيسي الذي يحلم بأن يصبح ملك القراصنة. يمتلك جسم مطاطي بسبب فاكهة الشيطان ويشتهر بصراخه "سأكون ملك القراصنة!".</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- شخصية 2 -->
+                <div class="character-card">
+                    <img src="zoro.jpg" alt="زورو" class="character-image">
+                    <div class="character-info">
+                        <h3 class="character-name">رورونوا زورو</h3>
+                        <span class="character-role">مبارز السيف</span>
+                        <div class="character-details">
+                            <div class="detail-row"><span class="detail-label">القدرة:</span> تقنية السنتوري</div>
+                            <div class="detail-row"><span class="detail-label">الانتماء:</span> قراصنة قبعة القش</div>
+                            <div class="detail-row"><span class="detail-label">السمات:</span> جاد، قوي الإرادة، سيء في الاتجاهات</div>
+                            <p>أول عضو ينضم إلى لوفي، يسعى ليكون أقوى سياف في العالم. يستخدم أسلوب السيف الثلاثي ويتحمل الألم بصبر شديد.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- شخصية 3 -->
+                <div class="character-card">
+                    <img src="nami.jpg" alt="نامي" class="character-image">
+                    <div class="character-info">
+                        <h3 class="character-name">نامي</h3>
+                        <span class="character-role">ملاحة السفينة</span>
+                        <div class="character-details">
+                            <div class="detail-row"><span class="detail-label">القدرة:</span> قراءة الخرائط والطقس</div>
+                            <div class="detail-row"><span class="detail-label">الانتماء:</span> قراصنة قبعة القش</div>
+                            <div class="detail-row"><span class="detail-label">السمات:</span> ذكية، تحب المال، سريعة الغضب</div>
+                            <p>ملاحة السفينة الماهرة التي تحلم برسم خريطة العالم كله. تعرف بذكائها وقدرتها على التنبؤ بالطقس باستخدام عصاها الخاصة.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- شخصية 4 -->
+                <div class="character-card">
+                    <img src="usopp.jpg" alt="يوسوب" class="character-image">
+                    <div class="character-info">
+                        <h3 class="character-name">يوسوب</h3>
+                        <span class="character-role">قناص السفينة</span>
+                        <div class="character-details">
+                            <div class="detail-row"><span class="detail-label">القدرة:</span> القنص الدقيق</div>
+                            <div class="detail-row"><span class="detail-label">الانتماء:</span> قراصنة قبعة القش</div>
+                            <div class="detail-row"><span class="detail-label">السمات:</span> جبان، مخترع، يحكي القصص</div>
+                            <p>قناص الطاقم الذي يحلم بأن يصبح محارباً شجاعاً مثل أبيه. معروف بكذبه الدائم وقدرته على الاختراع.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- شخصية 5 -->
+                <div class="character-card">
+                    <img src="sanji.jpg" alt="سانجي" class="character-image">
+                    <div class="character-info">
+                        <h3 class="character-name">سانجي</h3>
+                        <span class="character-role">طباخ السفينة</span>
+                        <div class="character-details">
+                            <div class="detail-row"><span class="detail-label">القدرة:</span> تقنية القدم السوداء</div>
+                            <div class="detail-row"><span class="detail-label">الانتماء:</span> قراصنة قبعة القش</div>
+                            <div class="detail-row"><span class="detail-label">السمات:</span> أنيق، عاشق للنساء، مخلص لمطبخه</div>
+                            <p>طباخ السفينة الماهر الذي يستخدم قدميه فقط في القتال. يحلم بإيجاد "أل بلو" البحر الأسطوري الذي يجمع كل بحار العالم.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- شخصية 6 -->
+                <div class="character-card">
+                    <img src="chopper.jpg" alt="تشوبر" class="character-image">
+                    <div class="character-info">
+                        <h3 class="character-name">توني توني تشوبر</h3>
+                        <span class="character-role">طبيب السفينة</span>
+                        <div class="character-details">
+                            <div class="detail-row"><span class="detail-label">القدرة:</span> فاكهة هيتو هيتو نو مي</div>
+                            <div class="detail-row"><span class="detail-label">الانتماء:</span> قراصنة قبعة القش</div>
+                            <div class="detail-row"><span class="detail-label">السمات:</span> لطيف، سريع التأثر، يحب الحلوى</div>
+                            <p>رنة آكلة فاكهة الشيطان مكنتها من التحول إلى إنسان. انضم إلى الطاقم كطبيب وهو برفقة د. هيلولوك.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- شخصية 7 -->
+                <div class="character-card">
+                    <img src="robin.jpg" alt="روبين" class="character-image">
+                    <div class="character-info">
+                        <h3 class="character-name">نيكو روبين</h3>
+                        <span class="character-role">عالمة الآثار</span>
+                        <div class="character-details">
+                            <div class="detail-row"><span class="detail-label">القدرة:</span> فاكهة هانا هانا نو مي</div>
+                            <div class="detail-row"><span class="detail-label">الانتماء:</span> قراصنة قبعة القش</div>
+                            <div class="detail-row"><span class="detail-label">السمات:</span> غامضة، ذكية، تحب التاريخ</div>
+                            <p>آخر ناجية من جزيرة أوهارا، انضمت إلى الطاقم بعد أحداث ألاباستا. تحلم باكتشاف حقيقة بونيغليف والقرن الضائع.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- شخصية 8 -->
+                <div class="character-card">
+                    <img src="franky.jpg" alt="فرانكي" class="character-image">
+                    <div class="character-info">
+                        <h3 class="character-name">فرانكي</h3>
+                        <span class="character-role">نجار السفينة</span>
+                        <div class="character-details">
+                            <div class="detail-row"><span class="detail-label">القدرة:</span> جسم سيبراني</div>
+                            <div class="detail-row"><span class="detail-label">الانتماء:</span> قراصنة قبعة القش</div>
+                            <div class="detail-row"><span class="detail-label">السمات:</span> صاخب، عاشق للكولا، ماهر في الهندسة</div>
+                            <p>نجار السفن الماهر الذي صمم وصنع سفينة الطاقم الجديدة "سنشي غو". نصف جسمه آلي بعد حادث قطار.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- شخصية 9 -->
+                <div class="character-card">
+                    <img src="brook.jpg" alt="بروك" class="character-image">
+                    <div class="character-info">
+                        <h3 class="character-name">بروك</h3>
+                        <span class="character-role">موسيقي السفينة</span>
+                        <div class="character-details">
+                            <div class="detail-row"><span class="detail-label">القدرة:</span> فاكهة يومي يومي نو مي</div>
+                            <div class="detail-row"><span class="detail-label">الانتماء:</span> قراصنة قبعة القش</div>
+                            <div class="detail-row"><span class="detail-label">السمات:</span> مرح، عاشق للحليب، هيكل عظمي</div>
+                            <p>عازف الكمان في الطاقم وهو هيكل عظمي يعود إلى الحياة بفعل فاكهة الشيطان. يحلم بلقاء لابون الحوت مرة أخرى.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- شخصية 10 -->
+                <div class="character-card">
+                    <img src="jinbe.jpg" alt="جينبي" class="character-image">
+                    <div class="character-info">
+                        <h3 class="character-name">جينبي</h3>
+                        <span class="character-role">ملاح السفينة</span>
+                        <div class="character-details">
+                            <div class="detail-row"><span class="detail-label">القدرة:</span> تقنية السمكة-الإنسان</div>
+                            <div class="detail-row"><span class="detail-label">الانتماء:</span> قراصنة قبعة القش</div>
+                            <div class="detail-row"><span class="detail-label">السمات:</span> حكيم، قوي، مخلص</div>
+                            <p>قرصان سمكة-إنسان وقائد سابق لقراصنة الشمس. انضم رسمياً للطاقم بعد أحداث حرب القمة. خبير في الكاراتيه المائي.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- قسم الأركات -->
+        <div id="arcs" class="tab-content">
+            <h2>أركات القصة</h2>
+            <p>المراحل الرئيسية لتطور القصة في أنمي ون بيس</p>
+            
+            <div class="arcs-container">
+                <!-- أركة 1 -->
+                <div class="arc-card">
+                    <h3 class="arc-title"><i class="fas fa-ship"></i> أركة الشرق الأزرق</h3>
+                    <div class="arc-chapters">الحلقات 1-61</div>
+                    <p>بداية القصة مع لوفي وتكوينه لطاقمه الأول (زورو، نامي، يوسوب، سانجي). مغامرات في جزر سيريكس، أورانج تاون، ساوبوندي، وباراتي.</p>
+                </div>
+                
+                <!-- أركة 2 -->
+                <div class="arc-card">
+                    <h3 class="arc-title"><i class="fas fa-desert"></i> أركة ألاباستا</h3>
+                    <div class="arc-chapters">الحلقات 62-135</div>
+                    <p>مواجهة مع باروك ووركس وقراصنة الباجي في مملكة ألاباستا. انضمام تشوبر للطاقم ومواجهة كروكودايل.</p>
+                </div>
+                
+                <!-- أركة 3 -->
+                <div class="arc-card">
+                    <h3 class="arc-title"><i class="fas fa-cloud"></i> أركة سكايبيا</h3>
+                    <div class="arc-chapters">الحلقات 136-206</div>
+                    <p>الصعود إلى جزيرة السماء سكايبيا ومواجهة إينيل وكهنة السماء. اكتشاف بونيغليف والصراع من أجل جرس الذهب.</p>
+                </div>
+                
+                <!-- أركة 4 -->
+                <div class="arc-card">
+                    <h3 class="arc-title"><i class="fas fa-water"></i> أركة ووتر 7 وإنيس لوبي</h3>
+                    <div class="arc-chapters">الحلقات 207-325</div>
+                    <p>زيارة مدينة السفن ووتر 7 ومواجهة CP9. إنقاذ روبين وفرانكي من حكومة العالم. بناء السفينة الجديدة "سنشي غو".</p>
+                </div>
+                
+                <!-- أركة 5 -->
+                <div class="arc-card">
+                    <h3 class="arc-title"><i class="fas fa-ghost"></i> أركة ثريلر بارك</h3>
+                    <div class="arc-chapters">الحلقات 326-384</div>
+                    <p>المغامرة في جزيرة الأشباح ومواجهة جيك موريا وطاقمه. انضمام بروك للطاقم واكتشاف ظل دراكولا.</p>
+                </div>
+                
+                <!-- أركة 6 -->
+                <div class="arc-card">
+                    <h3 class="arc-title"><i class="fas fa-crown"></i> أركة حرب القمة</h3>
+                    <div class="arc-chapters">الحلقات 385-516</div>
+                    <p>إنقاذ آس من إمبل داون وحرب مارينفورد ضد البحرية. موت آس واكتشاف رسالة غول دي روجر.</p>
+                </div>
+                
+                <!-- أركة 7 -->
+                <div class="arc-card">
+                    <h3 class="arc-title"><i class="fas fa-fish"></i> أركة جزيرة السمكة-الإنسان</h3>
+                    <div class="arc-chapters">الحلقات 517-574</div>
+                    <p>المغامرة تحت الماء ومواجهة هودي جونز. انضمام جينبي للطاقم واكتشاف كنز جزيرة السمكة-الإنسان.</p>
+                </div>
+                
+                <!-- أركة 8 -->
+                <div class="arc-card">
+                    <h3 class="arc-title"><i class="fas fa-flask"></i> أركة دريسروزا</h3>
+                    <div class="arc-chapters">الحلقات 575-746</div>
+                    <p>التحالف مع ترافالغار لو ومواجهة دوفلامنغو. تحرير مملكة دريسروزا وكشف أسرار سميلي.</p>
+                </div>
+                
+                <!-- أركة 9 -->
+                <div class="arc-card">
+                    <h3 class="arc-title"><i class="fas fa-cake"></i> أركة كعكة الزفاف</h3>
+                    <div class="arc-chapters">الحلقات 747-889</div>
+                    <p>إنقاذ سانجي من عائلة فينسموك ومواجهة بيغ موم. هروب من توت لاند واكتشاف خريطة رود بونيغليف.</p>
+                </div>
+                
+                <!-- أركة 10 -->
+                <div class="arc-card">
+                    <h3 class="arc-title"><i class="fas fa-skull"></i> أركة وانو</h3>
+                    <div class="arc-chapters">الحلقات 890-1085</div>
+                    <p>التحالف مع كيدو ومواجهة كايدو في وانو. تحرير وانو من حكم كايدو واكتشاف أسرار بونيغليف.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- قسم المشاهدة -->
+        <div id="watch" class="tab-content">
+            <h2>طريقة مشاهدة الأنمي</h2>
+            <p>روابط مباشرة لمشاهدة أنمي ون بيس على المنصات المختلفة</p>
+            
+            <div class="watch-options">
+                <!-- منصة 1 -->
+                <div class="platform">
+                    <div class="platform-icon">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <div class="platform-info">
+                        <div class="platform-name">كرانشي رول</div>
+                        <p>المنصة الرسمية لمشاهدة الأنمي بجودة عالية وترجمة احترافية</p>
+                    </div>
+                    <a href="https://www.crunchyroll.com/series/GRMG8ZQZR/one-piece" class="watch-btn" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> الذهاب للموقع
+                    </a>
+                </div>
+                
+                <!-- منصة 2 -->
+                <div class="platform">
+                    <div class="platform-icon">
+                        <i class="fab fa-netflix"></i>
+                    </div>
+                    <div class="platform-info">
+                        <div class="platform-name">نتفليكس</div>
+                        <p>متاح في بعض المناطق بترجمة متعددة اللغات ودبلجة</p>
+                    </div>
+                    <a href="https://www.netflix.com/title/80217863" class="watch-btn" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> الذهاب للموقع
+                    </a>
+                </div>
+                
+                <!-- منصة 3 -->
+                <div class="platform">
+                    <div class="platform-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <div class="platform-info">
+                        <div class="platform-name">Aniwatch</div>
+                        <p>منصة غير رسمية توفر الأنمي بجودة عربية</p>
+                    </div>
+                    <a href="https://aniwatch.to/one-piece-100" class="watch-btn" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> الذهاب للموقع
+                    </a>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 40px;">ترتيب المشاهدة الموصى به:</h3>
+            <ol>
+                <li>أركة الشرق الأزرق (ح1-61)</li>
+                <li>أركة ألاباستا (ح62-135)</li>
+                <li>أركة سكايبيا (ح136-206)</li>
+                <li>أركة ووتر 7 وإنيس لوبي (ح207-325)</li>
+                <li>أركة ثريلر بارك (ح326-384)</li>
+                <li>أركة حرب القمة (ح385-516)</li>
+                <li>أركة جزيرة السمكة-الإنسان (ح517-574)</li>
+                <li>أركة دريسروزا (ح575-746)</li>
+                <li>أركة كعكة الزفاف (ح747-889)</li>
+                <li>أركة وانو (ح890-1085+)</li>
+            </ol>
+            
+            <h3 style="margin-top: 30px;">الأفلام المهمة:</h3>
+            <ul>
+                <li>ون بيس: الفيلم الذهبي (2000)</li>
+                <li>بارون أوماتسوري والجزيرة السرية (2005)</li>
+                <li>ون بيس فيلم: سترونج وورلد (2009)</li>
+                <li>ون بيس فيلم: Z (2012)</li>
+                <li>ون بيس فيلم: جولد (2016)</li>
+                <li>ون بيس فيلم: ستامبيد (2019)</li>
+                <li>ون بيس فيلم: ريد (2022)</li>
+            </ul>
+        </div>
+        
+        <!-- قسم الأحداث الخاصة -->
+        <div id="events" class="tab-content">
+            <h2>أحداث خاصة في ون بيس</h2>
+            <p>أهم الأحداث والحلقات الخاصة في أنمي ون بيس</p>
+            
+            <div class="events-container">
+                <!-- حدث 1 -->
+                <div class="event-card">
+                    <img src="images/marineford.jpg" alt="حرب مارينفورد" class="event-image">
+                    <div class="event-info">
+                        <h3 class="event-title">حرب مارينفورد</h3>
+                        <p>أعظم حرب في تاريخ ون بيس بين البحرية وقراصنة اللحية البيضاء</p>
+                    </div>
+                </div>
+                
+                <!-- حدث 2 -->
+                <div class="event-card">
+                    <img src="images/gear5.jpg" alt="الترس الخامس" class="event-image">
+                    <div class="event-info">
+                        <h3 class="event-title">كشف الترس الخامس</h3>
+                        <p>ظهور أقصى قوة للوفي ضد كايدو في وانو</p>
+                    </div>
+                </div>
+                
+                <!-- حدث 3 -->
+                <div class="event-card">
+                    <img src="images/roger.jpg" alt="غول دي روجر" class="event-image">
+                    <div class="event-info">
+                        <h3 class="event-title">إعدام غول دي روجر</h3>
+                        <p>الحدث الذي أشعل عصر القراصنة الكبير</p>
+                    </div>
+                </div>
+                
+                <!-- حدث 4 -->
+                <div class="event-card">
+                    <img src="images/sunny.jpg" alt="سنشي غو" class="event-image">
+                    <div class="event-info">
+                        <h3 class="event-title">ظهور سنشي غو</h3>
+                        <p>السفينة الجديدة لقراصنة قبعة القش</p>
+                    </div>
+                </div>
+                
+                <!-- حدث 5 -->
+                <div class="event-card">
+                    <img src="images/merry.jpg" alt="جوينغ ميري" class="event-image">
+                    <div class="event-info">
+                        <h3 class="event-title">وداع جوينغ ميري</h3>
+                        <p>أحد أكثر المشاهد تأثيراً في الأنمي</p>
+                    </div>
+                </div>
+                
+                <!-- حدث 6 -->
+                <div class="event-card">
+                    <img src="images/nothing.jpg" alt="لا شيء حدث" class="event-image">
+                    <div class="event-info">
+                        <h3 class="event-title">"لا شيء حدث!"</h3>
+                        <p>تضحية زورو في ثريلر بارك</p>
+                    </div>
+                </div>
+                
+                <!-- حدث 7 -->
+                <div class="event-card">
+                    <img src="images/sanji.jpg" alt="وداع سانجي" class="event-image">
+                    <div class="event-info">
+                        <h3 class="event-title">وداع سانجي</h3>
+                        <p>مشهد الوداع المؤثر بين سانجي وزييف</p>
+                    </div>
+                </div>
+                
+                <!-- حدث 8 -->
+                <div class="event-card">
+                    <img src="images/robin.jpg" alt="أريد أن أعيش" class="event-image">
+                    <div class="event-info">
+                        <h3 class="event-title">"أريد أن أعيش!"</h3>
+                        <p>صراخ روبين المؤثر في إنيس لوبي</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(tabId) {
+            // إخفاء جميع المحتويات
+            const tabContents = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].style.display = 'none';
+            }
+            
+            // إزالة التنشيط من جميع الأزرار
+            const tabBtns = document.getElementsByClassName('tab-btn');
+            for (let i = 0; i < tabBtns.length; i++) {
+                tabBtns[i].classList.remove('active');
+            }
+            
+            // عرض المحتوى المطلوب وتفعيل الزر
+            document.getElementById(tabId).style.display = 'block';
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
